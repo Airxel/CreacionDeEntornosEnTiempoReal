@@ -348,7 +348,6 @@ MonoBehaviour:
   moverText: {fileID: 2006886990}
   rotarText: {fileID: 1664265210}
   eliminarText: {fileID: 1050491034}
-  objectDeleted: {fileID: 0}
 --- !u!114 &96167826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lampara: {fileID: 831967724}
+  crearText: {fileID: 1976597020}
   newLampara: {fileID: 0}
 --- !u!1001 &126626142
 PrefabInstance:
@@ -754,7 +754,6 @@ MonoBehaviour:
   moverText: {fileID: 0}
   rotarText: {fileID: 0}
   eliminarText: {fileID: 0}
-  objectDeleted: {fileID: 0}
 --- !u!1001 &217821913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1254,10 +1253,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Haga click en el objeto que quiera colocar.
-
-    Vuelva a hacer click
-    para confirmar el lugar donde desee colocarlo.'
+  m_text: "1\xBA - Haga clic en el objeto que quiera crear.\n2\xBA - Haga clic en
+    el lugar donde quiera colocarlo."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d7dd345e2908e24c84369f641f96abe, type: 2}
   m_sharedMaterial: {fileID: 6252767004230592683, guid: 2d7dd345e2908e24c84369f641f96abe, type: 2}
@@ -1631,7 +1628,6 @@ MonoBehaviour:
   moverText: {fileID: 2006886990}
   rotarText: {fileID: 1664265210}
   eliminarText: {fileID: 1050491034}
-  objectDeleted: {fileID: 0}
 --- !u!114 &531320812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1745,10 +1741,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Haga click en el objeto que quiera mover.
-
-    Vuelva a hacer click para
-    confirmar el lugar donde desee moverlo.'
+  m_text: "1\xBA - Haga clic en el objeto que quiera mover.\n2\xBA - Haga clic en
+    el lugar donde quiera moverlo."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d7dd345e2908e24c84369f641f96abe, type: 2}
   m_sharedMaterial: {fileID: 6252767004230592683, guid: 2d7dd345e2908e24c84369f641f96abe, type: 2}
@@ -1989,7 +1983,6 @@ MonoBehaviour:
   moverText: {fileID: 2006886990}
   rotarText: {fileID: 1664265210}
   eliminarText: {fileID: 1050491034}
-  objectDeleted: {fileID: 0}
 --- !u!64 &586273158
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2568,7 +2561,6 @@ MonoBehaviour:
   moverText: {fileID: 2006886990}
   rotarText: {fileID: 1664265210}
   eliminarText: {fileID: 1050491034}
-  objectDeleted: {fileID: 0}
 --- !u!114 &822641903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2582,6 +2574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mesa: {fileID: 1909568472}
+  crearText: {fileID: 1976597020}
   newMesa: {fileID: 0}
 --- !u!1001 &831967722
 PrefabInstance:
@@ -2678,7 +2671,6 @@ MonoBehaviour:
   moverText: {fileID: 2006886990}
   rotarText: {fileID: 1664265210}
   eliminarText: {fileID: 1050491034}
-  objectDeleted: {fileID: 0}
 --- !u!64 &831967729
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2820,7 +2812,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Haga click en el objeto que quiera eliminar.
+  m_text: "1\xBA - Haga clic en el objeto que quiera eliminar."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d7dd345e2908e24c84369f641f96abe, type: 2}
   m_sharedMaterial: {fileID: 6252767004230592683, guid: 2d7dd345e2908e24c84369f641f96abe, type: 2}
@@ -3135,7 +3127,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: -1, y: 35, z: -40}
+  m_LocalPosition: {x: -1, y: 35, z: -42.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3321,7 +3313,6 @@ MonoBehaviour:
   moverText: {fileID: 2006886990}
   rotarText: {fileID: 1664265210}
   eliminarText: {fileID: 1050491034}
-  objectDeleted: {fileID: 0}
 --- !u!114 &1010935674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3335,6 +3326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   silla: {fileID: 1284741244}
+  crearText: {fileID: 1976597020}
   newSilla: {fileID: 0}
 --- !u!1001 &1019489925
 PrefabInstance:
@@ -3638,7 +3630,6 @@ MonoBehaviour:
   moverText: {fileID: 2006886990}
   rotarText: {fileID: 1664265210}
   eliminarText: {fileID: 1050491034}
-  objectDeleted: {fileID: 0}
 --- !u!114 &1079166706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3652,6 +3643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planta: {fileID: 586273153}
+  crearText: {fileID: 1976597020}
   newPlanta: {fileID: 0}
 --- !u!1001 &1156159429
 PrefabInstance:
@@ -4372,7 +4364,6 @@ MonoBehaviour:
   moverText: {fileID: 2006886990}
   rotarText: {fileID: 1664265210}
   eliminarText: {fileID: 1050491034}
-  objectDeleted: {fileID: 0}
 --- !u!114 &1269116951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4385,8 +4376,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aadc32a6714238049a2578f349d22679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moverText: {fileID: 2006886990}
   movedObject: {fileID: 0}
-  isMovingObject: 0
 --- !u!1 &1284741244 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3354751876503663447, guid: 123c17bca47f3404d9792a26a9a611f2, type: 3}
@@ -4757,7 +4748,6 @@ MonoBehaviour:
   moverText: {fileID: 2006886990}
   rotarText: {fileID: 1664265210}
   eliminarText: {fileID: 1050491034}
-  objectDeleted: {fileID: 0}
 --- !u!54 &1529026659
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4931,6 +4921,7 @@ GameObject:
   - component: {fileID: 1600974195}
   - component: {fileID: 1600974194}
   - component: {fileID: 1600974193}
+  - component: {fileID: 1600974197}
   - component: {fileID: 1600974196}
   m_Layer: 5
   m_Name: Rotar Button
@@ -5015,6 +5006,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1600974197}
+        m_TargetAssemblyTypeName: RotarClicked, Assembly-CSharp
+        m_MethodName: RotateObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1600974194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5071,7 +5074,20 @@ MonoBehaviour:
   moverText: {fileID: 2006886990}
   rotarText: {fileID: 1664265210}
   eliminarText: {fileID: 1050491034}
-  objectDeleted: {fileID: 0}
+--- !u!114 &1600974197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600974191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48b3803c7094aa14a8ec480b69335cff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotarText: {fileID: 1664265210}
+  rotatedObject: {fileID: 0}
 --- !u!1 &1650334577
 GameObject:
   m_ObjectHideFlags: 0
@@ -5170,8 +5186,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1650334583}
-        m_TargetAssemblyTypeName: ObjectSelected, Assembly-CSharp
-        m_MethodName: ToggleDeleteMode
+        m_TargetAssemblyTypeName: EliminarClicked, Assembly-CSharp
+        m_MethodName: DeleteObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5237,7 +5253,6 @@ MonoBehaviour:
   moverText: {fileID: 2006886990}
   rotarText: {fileID: 1664265210}
   eliminarText: {fileID: 1050491034}
-  objectDeleted: {fileID: 0}
 --- !u!114 &1650334583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5251,7 +5266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eliminarText: {fileID: 1050491034}
-  selectedObject: {fileID: 0}
+  deletedObject: {fileID: 0}
 --- !u!1001 &1653626488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5542,7 +5557,6 @@ MonoBehaviour:
   moverText: {fileID: 2006886990}
   rotarText: {fileID: 1664265210}
   eliminarText: {fileID: 1050491034}
-  objectDeleted: {fileID: 0}
 --- !u!1 &1787549161
 GameObject:
   m_ObjectHideFlags: 0
@@ -5946,8 +5960,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Haga click en el objeto que quiera rotar.\nPulse las teclas Q o E para
-    rotar.\nVuelva a hacer click para confirmar la rotaci\xF3n."
+  m_text: "1\xBA - Haga clic en el objeto que quiera rotar.\n2\xBA - Pulse las teclas
+    Q - E para rotar el objeto.\n3\xBA - Pulse el espacio para confirmar."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d7dd345e2908e24c84369f641f96abe, type: 2}
   m_sharedMaterial: {fileID: 6252767004230592683, guid: 2d7dd345e2908e24c84369f641f96abe, type: 2}
@@ -6504,7 +6518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eliminarText: {fileID: 0}
-  selectedObject: {fileID: 0}
+  deletedObject: {fileID: 0}
 --- !u!64 &2041484818
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6820,7 +6834,6 @@ MonoBehaviour:
   moverText: {fileID: 2006886990}
   rotarText: {fileID: 1664265210}
   eliminarText: {fileID: 1050491034}
-  objectDeleted: {fileID: 0}
 --- !u!64 &2072429960
 MeshCollider:
   m_ObjectHideFlags: 0

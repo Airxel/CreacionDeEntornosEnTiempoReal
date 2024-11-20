@@ -8,54 +8,87 @@ public class EliminarClicked : MonoBehaviour
     GameObject eliminarText;
 
     [SerializeField]
-    private GameObject selectedObject;  // El objeto seleccionado
+    GameObject deletedObject;
 
-    private bool isDeleteMode = false;  // Modo de eliminación
+    // Condición de si el objeto está siendo eliminado
+    bool isDeletingObject = false;
 
-    // Función para activar o desactivar el modo de eliminación
-    public void ToggleDeleteMode()
+    // Condición de si el botón "Eliminar" ha sido pulsado
+    bool deleteIsClicked = false;
+
+
+    /// <summary>
+    /// Al hacer clic en el botón "Eliminar" de la UI, se activa esta función, que pone la condición en verdadera
+    /// </summary>
+    public void DeleteObject()
     {
-        if (!isDeleteMode)
-        {
-            isDeleteMode = true;
-        }
+        deleteIsClicked = true;
     }
 
-    // Función para eliminar el objeto seleccionado
-    public void TryDeleteObject()
+    private void Update()
     {
-        if (isDeleteMode && selectedObject != null)
+        if (deleteIsClicked == true)
         {
-            Destroy(selectedObject);  // Eliminar el objeto
-            selectedObject = null;  // Limpiar la selección
+            // Si la condición es verdadera, se activa la función
+            SelectedObject();
 
-            // Desactivamos el modo de eliminación después de borrar el objeto
-            isDeleteMode = false;
-
-            LeanTween.moveY(eliminarText.GetComponent<RectTransform>(), -200f, 0.5f).setEase(LeanTweenType.easeInOutSine);
-        }
-    }
-
-    // Esta función se llama en cada frame para detectar clics
-    void Update()
-    {
-        // Solo intentamos eliminar si estamos en modo de eliminación
-        if (isDeleteMode && Input.GetMouseButtonDown(0)) // Clic izquierdo del ratón
-        {
-            // Realizamos un raycast desde la cámara hacia el cursor
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
+            // Si la condición es verdadera y el objeto a borrar no es nulo, se activa la función
+            if (isDeletingObject == true && deletedObject != null)
             {
-                // Miramos si el objeto a borrar tiene la etiqueta de seleccionable
-                if (hit.collider.CompareTag("Selectable"))
-                {
-                    // Si el raycast golpea un objeto, lo asignamos como objeto seleccionado
-                    selectedObject = hit.collider.gameObject;
-                    TryDeleteObject();  // Intentamos eliminar el objeto seleccionado
-                }
-                
+                DeletingObject();
+            }
+        }
+    }
+
+    /// <summary>
+    /// Función para poder seleccionar un objeto usando raycast.
+    /// </summary>
+    private void SelectedObject()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            // Si el rayo golpea un objeto que tenga la etiqueta de "Selectable" y se ha hecho clic izquierdo
+            if (hit.collider.CompareTag("Selectable") && Input.GetMouseButtonDown(0))
+            {
+                // Se selecciona el objeto
+                deletedObject = hit.collider.gameObject;
+
+                // La condición del objeto en rotación pasa a ser verdadera
+                isDeletingObject = true;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Función para poder eliminar el objeto seleccionado.
+    /// </summary>
+    private void DeletingObject()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if(Physics.Raycast(ray,out hit))
+        {
+            // Al hacer clic izquiero
+            if (Input.GetMouseButtonDown(0))
+            {
+                // Se elimina el objeto seleccionado
+                Destroy(deletedObject);
+
+                // Deja de haber un objeto seleccionado
+                deletedObject = null;
+
+                // La condición del objeto siendo eliminado pasa a ser falsa
+                isDeletingObject = false;
+
+                // La condición de si se ha pulsado el botón "Eliminar" pasa a ser falsa
+                deleteIsClicked = false;
+
+                // Animación que se realiza después de eliminar el objeto
+                LeanTween.moveY(eliminarText.GetComponent<RectTransform>(), -200f, 1.0f).setEase(LeanTweenType.easeInOutSine).setDelay(0.25f);
             }
         }
     }

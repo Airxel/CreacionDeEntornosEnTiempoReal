@@ -5,26 +5,28 @@ using UnityEngine;
 public class LamparaIconClicked : MonoBehaviour
 {
     [SerializeField]
-    GameObject lampara;
+    GameObject lampara, crearText;
 
     [SerializeField]
-    private GameObject newLampara;
+    GameObject newLampara;
 
-    // Función que se activa cuando hacemos clic en el icono de la mesa
+    /// <summary>
+    /// Al hacer clic en el icono de la lámpara en la UI, se activa esta función
+    /// </summary>
     public void LamparaClicked()
     {
         CreateObjectAtMousePosition();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        // Si el objeto ha sido creado, lo seguimos con el ratón
+        // Si la lámpara se ha creado, se activa la función
         if (newLampara != null)
         {
             FollowMouse();
 
-            // Colocamos el objeto en el lugar donde se hace clic izquierdo
+            // Si se hace clic izquierdo, se activa la función
             if (Input.GetMouseButtonDown(0))
             {
                 PlaceObjectAtMouseClick();
@@ -32,54 +34,60 @@ public class LamparaIconClicked : MonoBehaviour
         }
     }
 
-    // Función para crear el objeto en la posición del ratón
+    /// <summary>
+    /// Función para poder crear el objeto en la posición del ratón, usando raycast
+    /// </summary>
     private void CreateObjectAtMousePosition()
     {
-        // Se manda un rayo desde la cámara hacia el ratón
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        // Vemos si el rayo colisiona con algún objeto
+        // Si el rayo golpea con algún objeto
         if (Physics.Raycast(ray, out hit))
         {
-            // Se crea el objeto en la posición donde colisione
+            // Se crea el objeto en la posición donde golpee
             newLampara = Instantiate(lampara, hit.point, Quaternion.identity);
         }
     }
 
-    // Función para mover el objeto según el movimiento del ratón
+    /// <summary>
+    /// Función para que el objeto seleccionado siga al ratón usando raycast.
+    /// </summary>
     private void FollowMouse()
     {
-        // Se manda un rayo desde la cámara hacia el ratón
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        // Vemos si el rayo colisiona con algún objeto
+        // Si el rayo golpea con algún objeto
         if (Physics.Raycast(ray, out hit))
         {
-            // Se coloca el objeto en la posición donde colisione
+            // El objeto sigue al ratón a una distancia algo alejada porque el raycast estaba afectando al propio objeto al moverse,
+            // ya que el ratón estaba sobre el objeto en algunos casos
             newLampara.transform.position = new Vector3(hit.point.x, hit.point.y + 2f, hit.point.z);
         }
     }
 
-    // Función para colocar el objeto donde se hace clic
+    /// <summary>
+    /// Función para poder colocar el objeto seleccionado, usando raycast, en alguna superficie concreta al hacer clic izquierdo
+    /// </summary>
     private void PlaceObjectAtMouseClick()
     {
-        // Se manda un rayo desde la cámara hacia el ratón
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        // Si el rayo colisiona con una superficie
         if (Physics.Raycast(ray, out hit))
         {
-            // Se mira que la superficie tenga la etiqueta de "suelo"
+            // La superficie tiene que tener la etiqueta de "Suelo" o el objeto no se puede colocar
             if (hit.collider.CompareTag("Suelo"))
             {
-                // Se coloca el objeto en la posición donde se hizo clic
-                newLampara.transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+                // Se coloca el objeto donde el rayo golpee al hacer clic
+                newLampara.transform.position = hit.point;
 
-                // Y el objeto deja de seguir el ratón
+                // El objeto deja de seguir el ratón
                 newLampara = null;
+
+                // Animación que se realiza después de colocar el objeto
+                LeanTween.moveY(crearText.GetComponent<RectTransform>(), -200f, 1.0f).setEase(LeanTweenType.easeInOutSine).setDelay(0.25f);
             }     
         }
     }
