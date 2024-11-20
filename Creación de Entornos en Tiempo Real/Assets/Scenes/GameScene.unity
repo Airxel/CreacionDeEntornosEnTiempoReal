@@ -1253,8 +1253,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1\xBA - Haga clic en el objeto que quiera crear.\n2\xBA - Haga clic en
-    el lugar donde quiera colocarlo."
+  m_text: '1.- Haga clic en el objeto que quiera crear.
+
+    2.- Haga clic en el
+    lugar donde quiera colocarlo.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d7dd345e2908e24c84369f641f96abe, type: 2}
   m_sharedMaterial: {fileID: 6252767004230592683, guid: 2d7dd345e2908e24c84369f641f96abe, type: 2}
@@ -1741,8 +1743,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1\xBA - Haga clic en el objeto que quiera mover.\n2\xBA - Haga clic en
-    el lugar donde quiera moverlo."
+  m_text: '1.- Haga clic en el objeto que quiera mover.
+
+    2.- Haga clic en el
+    lugar donde quiera moverlo.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d7dd345e2908e24c84369f641f96abe, type: 2}
   m_sharedMaterial: {fileID: 6252767004230592683, guid: 2d7dd345e2908e24c84369f641f96abe, type: 2}
@@ -2812,7 +2816,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1\xBA - Haga clic en el objeto que quiera eliminar."
+  m_text: 1.- Haga clic en el objeto que quiera eliminar.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d7dd345e2908e24c84369f641f96abe, type: 2}
   m_sharedMaterial: {fileID: 6252767004230592683, guid: 2d7dd345e2908e24c84369f641f96abe, type: 2}
@@ -5960,8 +5964,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "1\xBA - Haga clic en el objeto que quiera rotar.\n2\xBA - Pulse las teclas
-    Q - E para rotar el objeto.\n3\xBA - Pulse el espacio para confirmar."
+  m_text: '1.- Haga clic en el objeto que quiera rotar.
+
+    2.- Pulse las teclas
+    Q - E para rotar el objeto.
+
+    3.- Pulse el espacio para confirmar.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2d7dd345e2908e24c84369f641f96abe, type: 2}
   m_sharedMaterial: {fileID: 6252767004230592683, guid: 2d7dd345e2908e24c84369f641f96abe, type: 2}
