@@ -10,7 +10,7 @@ public class ManagerGeneral : MonoBehaviour
 {
 
     [SerializeField]
-    GameObject buttonsPanel, objectsPanel, crearText, moverText, rotarText, eliminarText;
+    GameObject buttonsPanel, objectsPanel, crearText, moverText, rotarText, eliminarText, escalarText;
 
     /// <summary>
     /// Animaciones que se realizan al hacer clic en el panel donde están los botones
@@ -94,4 +94,12 @@ public class ManagerGeneral : MonoBehaviour
         LeanTween.moveX(objectsPanel.GetComponent<RectTransform>(), 275f, 1.0f).setEase(LeanTweenType.easeInOutSine);
     }
 
+    /// <summary>
+    /// Animaciones que se realizan al hacer clic en el botón "Escalar"
+    /// </summary>
+    public void EscalarButtonClicked()
+    {
+        LeanTween.moveY(buttonsPanel.GetComponent<RectTransform>(), -75f, 1.0f).setEase(LeanTweenType.easeInOutSine);
+        LeanTween.moveY(escalarText.GetComponent<RectTransform>(), 20f, 1.0f).setEase(LeanTweenType.easeInOutSine).setDelay(0.25f);
+    }
 }

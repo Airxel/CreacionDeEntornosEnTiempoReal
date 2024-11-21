@@ -10,6 +10,12 @@ public class SillaIconClicked : MonoBehaviour
     [SerializeField]
     GameObject newSilla;
 
+    [SerializeField]
+    GameObject sombra;
+
+    [SerializeField]
+    Vector3 sombraOriginalPosition = new Vector3(-150f, 0f, 20f);
+
     /// <summary>
     /// Al hacer clic en el icono de la silla en la UI, se activa esta función
     /// </summary>
@@ -47,6 +53,9 @@ public class SillaIconClicked : MonoBehaviour
         {
             // Se crea el objeto en la posición donde golpee
             newSilla = Instantiate(silla, hit.point, Quaternion.identity);
+
+            // Se emparenta la sombra al objeto creado
+            sombra.transform.parent = newSilla.transform;
         }
     }
 
@@ -64,6 +73,9 @@ public class SillaIconClicked : MonoBehaviour
             // El objeto sigue al ratón a una distancia algo alejada porque el raycast estaba afectando al propio objeto al moverse,
             // ya que el ratón estaba sobre el objeto en algunos casos
             newSilla.transform.position = new Vector3(hit.point.x, hit.point.y + 2f, hit.point.z);
+
+            // La posición de la sombra pasa a ser la del objeto creado
+            sombra.transform.position = newSilla.transform.position;
         }
     }
 
@@ -85,6 +97,12 @@ public class SillaIconClicked : MonoBehaviour
 
                 // El objeto deja de seguir el ratón
                 newSilla = null;
+
+                // La sombra deja de tener emparentado
+                sombra.transform.parent = null;
+
+                //La sombra vuelve a su posición original
+                sombra.transform.position = sombraOriginalPosition;
 
                 // Animación que se realiza después de colocar el objeto
                 LeanTween.moveY(crearText.GetComponent<RectTransform>(), -200f, 1.0f).setEase(LeanTweenType.easeInOutSine).setDelay(0.25f);
